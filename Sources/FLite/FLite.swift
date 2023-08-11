@@ -2,9 +2,13 @@ import FluentSQLiteDriver
 import Fork
 import NIO
 
-/// `FLite` is a lightweight NoSQL database solution engineered for Swift applications. It leverages the power of FluentSQLiteDriver, SwiftNIO, and Fork creating a streamlined, efficiency-oriented database tool. Primarily, `FLite` encapsulates essential components such as databases, an event loop group, a thread pool, and a logger, providing hands-on control and transparent logging.
-/// `FLite` class includes both in-memory and SQLite database instances configured with a tailor-made number of threads. With a collection of convenience initializers, the setup is flexible and straightforward. The class also provides a suite of key database operations including but not limited to migration, CRUD operations, and transaction management which are asynchronous and optimized with Swift's concurrency model.
-/// Effortlessly, with `FLite` developers can set up and manage lightweight and robust databases in their Swift applications.
+/**
+ `FLite` is a lightweight NoSQL database solution for Swift applications. It leverages the power of FluentSQLiteDriver, SwiftNIO, and Fork creating a streamlined, efficiency-oriented database tool. Primarily, `FLite` encapsulates essential components such as databases, an event loop group, a thread pool, and a logger, providing hands-on control and transparent logging.
+
+ `FLite` class includes both in-memory and SQLite database instances configured with a tailor-made number of threads. With a collection of convenience initializers, the setup is flexible and straightforward. The class also provides a suite of key database operations including but not limited to migration, CRUD operations, and transaction management which are asynchronous and optimized with Swift's concurrency model.
+
+ Effortlessly, with `FLite` developers can set up and manage lightweight and robust databases in their Swift applications.
+ */
 public class FLite {
     
     // MARK: - Public Static Values
