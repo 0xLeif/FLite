@@ -14,7 +14,7 @@ extension FLite {
     }
 
     /// Add a model to the database. This function returns an `EventLoopFuture` that completes when the Save operation is done.
-    public func add<T: Model>(model: T) -> EventLoopFuture<Void> {
+    public func save<T: Model>(model: T) -> EventLoopFuture<Void> {
         model.save(on: db)
     }
 

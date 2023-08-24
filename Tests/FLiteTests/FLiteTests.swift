@@ -11,7 +11,7 @@ final class FLiteTests: XCTestCase {
     func testExample() async throws {
         try await FLite.memory.prepare(migration: Todo.self)
 
-        try await FLite.memory.add(model: Todo(title: "Hello World", strings: ["hello", "world"]))
+        try await FLite.memory.save(model: Todo(title: "Hello World", strings: ["hello", "world"]))
 
         let values = try await FLite.memory.all(model: Todo.self)
 
@@ -27,7 +27,7 @@ final class FLiteTests: XCTestCase {
 
         try await flite.prepare(migration: Todo.self)
 
-        try await flite.add(model: Todo(title: "Hello World", strings: ["hello", "world"]))
+        try await flite.save(model: Todo(title: "Hello World", strings: ["hello", "world"]))
 
         let values = try await flite.all(model: Todo.self)
 
@@ -48,7 +48,7 @@ final class FLiteTests: XCTestCase {
         let mockValuesArray3 = (0 ..< arrayCount).map { _ in Todo(title: "Todo #\(Int.random(in: 0 ... 10000))", strings: []) }
 
         try await [mockValuesArray, mockValuesArray2, mockValuesArray3].asyncForEach { models in
-            try await flite.add(models: models)
+            try await flite.save(models: models)
         }
 
         let values = try await flite.all(model: Todo.self)

@@ -116,14 +116,14 @@ public class FLite {
     }
 
     /// Adds a model to the database.
-    public func add<T: Model>(model: T) async throws {
+    public func save<T: Model>(model: T) async throws {
         try await model.save(on: db)
     }
 
     /// Batch add multiple models to the database.
-    public func add<T: Model>(models: [T], batchSize: UInt = 10) async throws {
+    public func save<T: Model>(models: [T], batchSize: UInt = 10) async throws {
         try await models.asyncBatchedForEach(batch: batchSize) { model in
-            try await self.add(model: model)
+            try await self.save(model: model)
         }
     }
 

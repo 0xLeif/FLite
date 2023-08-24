@@ -39,6 +39,7 @@ extension Todo: Migration {
         database.schema(Todo.schema).delete()
     }
 }
+
 extension Todo: CustomStringConvertible {
     var description: String {
         return """
