@@ -43,8 +43,8 @@ let flite = FLite.memory
 // Prepare a migration for a Todo model
 try await flite.prepare(migration: Todo.self)
 
-// Add a model instance to the database
-try await flite.add(model: Todo(title: "Hello World", strings: ["hello", "world"]))
+// Save a model instance to the database
+try await flite.save(model: Todo(title: "Hello World", strings: ["hello", "world"]))
 
 // Fetch all instances of our model
 let todos = try await flite.all(model: Todo.self)
@@ -66,10 +66,10 @@ let flite = FLite(configuration: .file(fileURL), loggerLabel: "Custom.FLite")
 let batchSize: UInt = 3
 
 let todos = (0..<100).map { Todo(title: "Todo #\($0)", strings: []) }
-try await flite.add(models: todos, batchSize: batchSize)
+try await flite.save(models: todos, batchSize: batchSize)
 
 let allTodos = try await flite.all(model: Todo.self)
-print("Added \(allTodos.count) todos")
+print("Saved \(allTodos.count) todos")
 
 try await flite.deleteAll(model: Todo.self, batchSize: batchSize)
 ```

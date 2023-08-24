@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "37D36844-3A97-443F-9833-462EADA60DB1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "FLiteTests",
+        "name" : "FLiteTests"
+      }
+    }
+  ],
+  "version" : 1
+}
